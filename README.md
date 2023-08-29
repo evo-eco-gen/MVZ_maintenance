@@ -118,15 +118,15 @@ finished, the process cannot be canceled.
 
 #man-db depends on dsbmaninutils
 
-#Removing texlive-binaries (2015.20160222.37495-1ubuntu0.1) ...
-#dpkg: man-db: dependency problems, but processing triggers anyway as you requested:
-# man-db depends on bsdmainutils; however:
-#  Package bsdmainutils is not configured yet.
+Removing texlive-binaries (2015.20160222.37495-1ubuntu0.1) ...
+dpkg: man-db: dependency problems, but processing triggers anyway as you requested:
+ man-db depends on bsdmainutils; however:
+  Package bsdmainutils is not configured yet.
   
   
-#  Errors were encountered while processing:
-# /var/cache/apt/archives/docker.io_20.10.21-0ubuntu1~18.04.3_amd64.deb
-#Exception during pm.DoInstall():  E:Sub-process /usr/bin/dpkg returned an error code (1)
+  Errors were encountered while processing:
+ /var/cache/apt/archives/docker.io_20.10.21-0ubuntu1~18.04.3_amd64.deb
+Exception during pm.DoInstall():  E:Sub-process /usr/bin/dpkg returned an error code (1)
 ```
 
 Verify version:
@@ -189,22 +189,22 @@ reboot
 
 ## Set up the Uncomplicated Firewall:
 
-## check if IPv6 enabled:
+Check if IPv6 enabled:
 ```
 sysctl -a 2>/dev/null | grep disable_ipv6
 sudo vim /etc/default/ufw
 ```
-## Start with default config:
+Start with default config:
 ```
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 ```
-## Allow incoming ssh, on ports 22 and 1022 (as a back up)
+Allow incoming ssh, on ports 22 and 1022 (as a back up)
 ```
 sudo ufw allow ssh
 sudo ufw allow 1022
 ```
-## Allow ports for X11:
+Allow ports for X11:
 ```
 sudo ufw allow 6000:6007/tcp
 ```
