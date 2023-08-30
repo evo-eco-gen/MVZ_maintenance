@@ -3,7 +3,7 @@
 
 The server was running 16.04, which was last supported in April 2021.
 This posed various version incompatibility issues and security risks.
-The update was a multistep procedure to avoid the risks of going directly to 22.04. The ~/boot directory was cleaned of o0ld kernels to create space for the install.
+The update was a multistep procedure to avoid the risks of going directly to 22.04. The /boot directory was cleaned of o0ld kernels to create space for the install.
 
 Update 16.04 to 18.04:
 ```
@@ -38,8 +38,8 @@ du -h /boot
 ls -l
 ```
 ```python
-# -rw-r--r-- 1 root root 43180709 Nov 12  2020 initrd.img-4.4.0-194-generic
-# -rw-r--r-- 1 root root 43180625 Apr 17  2021 initrd.img-4.4.0-209-generic
+-rw-r--r-- 1 root root 43180709 Nov 12  2020 initrd.img-4.4.0-194-generic
+-rw-r--r-- 1 root root 43180625 Apr 17  2021 initrd.img-4.4.0-209-generic
 ```
 ```
 uname -r
@@ -51,12 +51,12 @@ These commands do not work, but it is normal for multiple commands to fail here.
 dpkg -l | tail -n +6 | grep -E 'linux-image-[0-9]+' | grep -Fv $(uname -r)
 ```
 ```python
-#rc  linux-image-4.4.0-193-generic              4.4.0-193.224                                   amd64        Signed kernel image generic
-#ii  linux-image-4.4.0-194-generic              4.4.0-194.226                                   amd64        Signed kernel image generic
-#rc  linux-image-4.4.0-197-generic              4.4.0-197.229                                   amd64        Signed kernel image generic
-#rc  linux-image-4.4.0-198-generic              4.4.0-198.230                                   amd64        Signed kernel image generic
-# ...
-#ii  linux-image-4.4.0-209-generic              4.4.0-209.241                                   amd64        Signed kernel image generic
+rc  linux-image-4.4.0-193-generic              4.4.0-193.224                                   amd64        Signed kernel image generic
+ii  linux-image-4.4.0-194-generic              4.4.0-194.226                                   amd64        Signed kernel image generic
+rc  linux-image-4.4.0-197-generic              4.4.0-197.229                                   amd64        Signed kernel image generic
+rc  linux-image-4.4.0-198-generic              4.4.0-198.230                                   amd64        Signed kernel image generic
+ ...
+ii  linux-image-4.4.0-209-generic              4.4.0-209.241                                   amd64        Signed kernel image generic
 ```
 rc = already removed \
 ii = can be removed
@@ -116,7 +116,7 @@ Installing the upgrade can take several hours. Once the download has
 finished, the process cannot be canceled.
 
 
-#man-db depends on dsbmaninutils
+man-db depends on dsbmaninutils
 
 Removing texlive-binaries (2015.20160222.37495-1ubuntu0.1) ...
 dpkg: man-db: dependency problems, but processing triggers anyway as you requested:
