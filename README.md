@@ -3,7 +3,7 @@
 
 The server was running 16.04, which was last supported in April 2021.
 This posed various version incompatibility issues and security risks.
-The update was a multistep procedure to avoid the risks of going directly to 22.04. The /boot directory was cleaned of o0ld kernels to create space for the install.
+The update was a multistep procedure to avoid the risks of going directly to 22.04. The /boot directory was rid off of old kernels to create space for the install.
 
 Update 16.04 to 18.04:
 ```
